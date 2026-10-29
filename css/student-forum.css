@@ -1,0 +1,1512 @@
+/**************************************************************
+ * STUDENT-FORUM.CSS 
+ * 
+ * Enhanced forum styling with a clean, professional look that aligns
+ * with the site's overall aesthetic. Improves comment organization
+ * and readability.
+ **************************************************************/
+@import url(common.css);
+
+/* ============================================================
+   GLOBAL / BODY
+   ============================================================ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Containers to center content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 80px; /* Clears a fixed header */
+}
+
+/* ============================================================
+   WELCOME & RULES SECTIONS
+   ============================================================ */
+.welcome {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.welcome h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.welcome p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Forum Rules Box */
+.forum-rules {
+  background-color: rgba(19, 47, 76, 0.4);
+  border-left: 4px solid var(--primary-blue);
+  padding: 1.8rem 2.2rem;
+  margin: 2.5rem 0;
+  border-radius: 0 15px 15px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.forum-rules:hover {
+  background-color: rgba(19, 47, 76, 0.6);
+  transform: translateX(5px);
+}
+
+.forum-rules h3 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.forum-rules p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ============================================================
+   FORUM CONTAINER / MAIN COMMENTS AREA
+   ============================================================ */
+.forum-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%; /* Make it full width like the login container */
+}
+
+.comments-section {
+  width: 100%; /* Increase from 80% to 100% */
+  max-width: 1200px;
+}
+
+/* ============================================================
+   LOGIN CONTAINER REDESIGN
+   ============================================================ */
+#login-container {
+  display: flex;
+  margin-bottom: 2.5rem;
+  background: rgba(30, 60, 90, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+#login-container:hover {
+  background: rgba(30, 60, 90, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-heading {
+  width: 50%;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 1px solid rgba(65, 135, 240, 0.2);
+}
+
+.login-heading h2 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  text-align: left;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.login-input-area {
+  width: 50%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+#login-username {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border: 2px solid var(--accent-blue);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#login-username:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(65, 135, 240, 0.3);
+  transform: translateY(-2px);
+}
+
+#login-btn,
+#logout-btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-blue);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#login-btn:hover,
+#logout-btn:hover {
+  background: var(--secondary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+#login-btn:active,
+#logout-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive adjustments for login container */
+@media (max-width: 900px) {
+  #login-container {
+    flex-direction: column;
+  }
+  
+  .login-heading, 
+  .login-input-area {
+    width: 100%;
+    border-right: none;
+  }
+  
+  .login-heading {
+    border-bottom: 1px solid rgba(65, 135, 240, 0.2);
+    padding-bottom: 1.5rem;
+  }
+  
+  .login-heading h2 {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .login-heading {
+    padding: 1.5rem;
+  }
+  
+  .login-heading h2 {
+    font-size: 1.4rem;
+  }
+  
+  .login-input-area {
+    padding: 1.5rem;
+  }
+}
+
+/* ============================================================
+   INTRODUCTIONS BOX
+   ============================================================ */
+.introductions {
+  margin: 3.5rem 0;
+  text-align: center;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.introductions:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.introductions h3 {
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.introductions p {
+  color: var(--text-secondary);
+  font-size: 1.15rem;
+}
+
+.introductions a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.introductions a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-blue);
+  transition: width 0.3s ease;
+}
+
+.introductions a:hover {
+  color: var(--primary-blue);
+}
+
+.introductions a:hover:after {
+  width: 100%;
+}
+
+/* ============================================================
+   MAIN INTERACTIVE COMMENTS WRAPPER
+   ============================================================ */
+.interactive-comments {
+  background: rgba(30, 60, 90, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  margin-top: 2rem;
+}
+
+.interactive-comments:hover {
+  background: rgba(30, 60, 90, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Where all comments + the main input live */
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+}
+
+.comments-wrp {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   MAIN "ADD COMMENT" AREA - UPDATED TO MATCH LOGIN AESTHETIC
+   ============================================================ */
+.reply-input.container.main-input {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+  background: rgba(30, 60, 90, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.reply-input.container.main-input:hover {
+  background: rgba(30, 60, 90, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.reply-input.container.main-input textarea.cmnt-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 1rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: left;
+  border-radius: 10px;
+  border: 2px solid var(--accent-blue);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+}
+
+.reply-input.container.main-input textarea.cmnt-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(65, 135, 240, 0.3);
+  transform: translateY(-2px);
+}
+
+.reply-input.container.main-input textarea.cmnt-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+}
+
+/* Update SEND button to match Continue button */
+.reply-input.container.main-input .bu-primary {
+  align-self: flex-end;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-blue);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reply-input.container.main-input .bu-primary:hover {
+  background: var(--secondary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.reply-input.container.main-input .bu-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   INDIVIDUAL COMMENTS + REPLIES - IMPROVED PROPORTIONS
+   ============================================================ */
+.comment-wrp {
+  background: rgba(30, 60, 90, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.comment-wrp:hover {
+  background: rgba(30, 60, 90, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* The .comment itself - more compact layout */
+.comment {
+  display: grid;
+  grid-template-areas: 
+    "score user controls"
+    "score body body";
+  grid-template-columns: auto 1fr auto;
+  gap: 0.5rem;
+  align-items: start;
+  color: var(--text-secondary);
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+/* More compact score container */
+.c-score {
+  grid-area: score;
+  margin-top: 0.3rem; /* Consistent top margin for all elements */
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0.4rem; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+.c-score:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.score-control {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  padding: 0.2rem;
+}
+
+.score-control:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.score-number {
+  font-weight: bold;
+  color: var(--accent-blue);
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+/* Controls for edit/delete/reply, aligned right */
+.c-controls {
+  grid-area: controls;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.c-controls a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.c-controls a i {
+  margin-right: 0.3rem;
+  margin-top: 0.1rem;
+}
+
+.c-controls a:hover {
+  color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+.c-controls .delete:hover {
+  color: #e53935;
+}
+
+/* Improved user info section */
+.c-user {
+  grid-area: user;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.3rem; /* Consistent top margin for all elements */
+  padding-top: 0;
+}
+
+.usr-img {
+  max-width: 38px; /* Reduced from 45px */
+  max-height: 38px; /* Reduced from 45px */
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-blue);
+  margin-top: 0.1rem;
+}
+
+.usr-name {
+  font-weight: 600;
+  color: var(--accent-blue);
+  font-size: 1.05rem;
+}
+
+/* More compact comment text */
+.c-text {
+  grid-area: body;
+  margin: 0;
+  padding-left: 0.2rem;
+}
+
+.c-body {
+  display: block;
+  color: var(--text-primary);
+  line-height: 1.6; /* Slightly reduced from 1.7 */
+  font-size: 1rem; /* Slightly reduced from 1.05rem */
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem; /* Add consistent bottom margin */
+}
+
+/* Improved hide replies button */
+.hide-replies-btn {
+  margin-top: 0.3rem; /* Match other elements */
+  margin-bottom: 0.3rem; /* Consistent spacing */
+  background: rgba(65, 135, 240, 0.2);
+  color: #ffffff; /* Changed from var(--accent-blue) to white */
+  border: 1px solid rgba(65, 135, 240, 0.3);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem; /* Reduced padding */
+  cursor: pointer;
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  transition: all 0.3s ease;
+  margin-left: 3rem; /* Reduced from 3.5rem */
+  font-weight: 500;
+}
+
+.hide-replies-btn:hover {
+  background: rgba(65, 135, 240, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Replies get nested inside .replies */
+.replies {
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem; /* Add consistent bottom margin */
+  padding-bottom: 0.3rem; /* Add bottom padding */
+  margin-left: 2.5rem;
+  border-left: none; /* Removing the border-left that creates the vertical line */
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start; /* Align items to the left */
+  width: calc(100% - 2.5rem); /* Account for the left margin */
+  max-width: 100%;
+  overflow: hidden; /* Prevent content from overflowing */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Ensure comment wrappers inside replies fit properly */
+.replies .comment-wrp {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-right: 0;
+  padding-right: 0.8rem; /* Slightly reduced right padding */
+}
+
+/* Adjust the grid layout for comments in replies */
+.replies .comment {
+  grid-template-columns: auto minmax(0, 1fr) auto; /* Prevent middle column from expanding too much */
+  width: 100%;
+}
+
+/* Ensure text content doesn't overflow */
+.c-text {
+  grid-area: body;
+  margin: 0;
+  padding-left: 0.2rem;
+  word-wrap: break-word; /* Allow long words to break */
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.c-body {
+  display: block;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  word-break: break-word; /* Allow breaking words to prevent overflow */
+  max-width: 100%;
+}
+
+/* ============================================================
+   REPLY INPUTS - UPDATED TO MATCH MAIN INPUT
+   ============================================================ */
+.reply-input.container:not(.main-input) {
+  background: rgba(30, 60, 90, 0.3);
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reply-input.container:not(.main-input):hover {
+  background: rgba(30, 60, 90, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.reply-input.container:not(.main-input) textarea.cmnt-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 1rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border-radius: 10px;
+  border: 2px solid var(--accent-blue);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+}
+
+.reply-input.container:not(.main-input) textarea.cmnt-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(65, 135, 240, 0.3);
+  transform: translateY(-2px);
+}
+
+.reply-input.container:not(.main-input) textarea.cmnt-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+}
+
+.reply-input.container:not(.main-input) .bu-primary {
+  align-self: flex-end;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-blue);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reply-input.container:not(.main-input) .bu-primary:hover {
+  background: var(--secondary-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================
+   MODAL (DELETE CONFIRMATION)
+   ============================================================ */
+.modal-wrp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-wrp.invisible {
+  display: none;
+}
+
+.modal.container {
+  position: relative;
+  background: var(--card-bg);
+  padding: 1.8rem 2.2rem;
+  border-radius: 12px;
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  color: var(--text-primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(65, 135, 240, 0.2);
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal.container h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  color: #e53935;
+}
+
+.modal.container p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal.container button {
+  padding: 0.7rem 1.3rem;
+  margin: 0.4rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.modal.container .yes {
+  background: #e53935;
+  color: #fff;
+}
+
+.modal.container .yes:hover {
+  background: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal.container .no {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal.container .no:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   LOGIN STATUS INDICATOR
+   Fixed at bottom-right to show logged in / out
+   ============================================================ */
+#login-status,
+.login-status {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  background: var(--primary-blue);
+  color: #fff;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Remove the .interactive-comments prefix to make it truly fixed to viewport */
+.login-status {
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(65, 135, 240, 0.3);
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#login-status.logged-out,
+.login-status.logged-out {
+  background: rgba(229, 57, 53, 0.2);
+  color: #f4929e;
+  border: 1px solid rgba(229, 57, 53, 0.3);
+}
+
+/* Add hover effect for better user experience */
+#login-status:hover,
+.login-status:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Generic popup used by JS for notifications */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--card-bg);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  z-index: 2000;
+  text-align: center;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  from { transform: translate(-50%, -40%) scale(0.8); opacity: 0; }
+  to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.popup p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.popup.info {
+  border: 2px solid var(--accent-blue);
+}
+
+.popup.success {
+  border: 2px solid #4caf50;
+}
+
+.popup.error {
+  border: 2px solid #e53935;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 1200px) {
+  .comments-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .comment {
+    grid-template-areas: 
+      "user user controls"
+      "body body body"
+      "score . .";
+    grid-template-columns: auto 1fr auto;
+  }
+  
+  .c-score {
+    flex-direction: row;
+    padding: 0.5rem 0.8rem;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #login-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reply-input.container.main-input {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  
+  .reply-input.container.main-input img {
+    justify-self: center;
+  }
+  
+  .reply-input.container.main-input textarea.cmnt-input {
+    min-height: 100px;
+  }
+
+  .hide-replies-btn {
+    margin-left: 0;
+  }
+  
+  .replies {
+    margin-left: 1.5rem;
+    width: calc(100% - 1.5rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .comment-wrp {
+    padding: 1rem; /* Keep consistent padding on mobile */
+  }
+  
+  .reply-input.container.main-input {
+    padding: 1rem; /* Keep consistent padding on mobile */
+  }
+  
+  .c-controls {
+    gap: 0.8rem;
+  }
+  
+  .c-controls a {
+    font-size: 0.8rem;
+  }
+  
+  .c-controls a i {
+    margin-right: 0.2rem;
+  }
+  
+  .welcome h2 {
+    font-size: 2rem;
+  }
+  
+  .forum-rules {
+    padding: 1.5rem;
+  }
+}
+  
+/* ============================================================
+   ENHANCED VISUAL ELEMENTS
+   ============================================================ */
+/* Add subtle gradient background to comments */
+.comment-wrp {
+  background: linear-gradient(145deg, rgba(30, 60, 90, 0.25), rgba(30, 60, 90, 0.35));
+}
+
+/* Add subtle highlight to user's own comments */
+.this-user.comment {
+  background: linear-gradient(145deg, rgba(65, 135, 240, 0.05), rgba(65, 135, 240, 0.1));
+  border-left: 3px solid var(--accent-blue);
+  padding-left: 0.5rem;
+}
+
+/* Enhance the comment input area */
+.reply-input.container.main-input {
+  background: linear-gradient(145deg, rgba(30, 60, 90, 0.3), rgba(30, 60, 90, 0.4));
+  border: 1px solid rgba(65, 135, 240, 0.15);
+  padding: 1.2rem; /* Reduced from 1.5rem */
+}
+
+.reply-input.container.main-input textarea.cmnt-input {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(65, 135, 240, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Add timestamp styling */
+.cmnt-at {
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  color: var(--text-secondary);
+  margin-left: 0.5rem;
+  opacity: 0.8;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.cmnt-at:before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent-blue);
+  opacity: 0.7;
+}
+
+/* Add subtle animation to new comments */
+@keyframes highlightNew {
+  0% { background-color: rgba(65, 135, 240, 0.2); }
+  100% { background-color: transparent; }
+}
+
+.comment-wrp.new-comment {
+  animation: highlightNew 2s ease-out forwards;
+}
+
+/* Enhance buttons with subtle effects */
+.bu-primary {
+  background: linear-gradient(to bottom right, var(--primary-blue), var(--secondary-blue));
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  position: relative;
+  overflow: hidden;
+}
+
+.bu-primary:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bu-primary:hover:after {
+  opacity: 1;
+}
+
+/* Add subtle dividers between comments */
+.comments-wrp > .comment-wrp:not(:last-child) {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.comments-wrp > .comment-wrp:not(:last-child):after {
+  content: '';
+  position: absolute;
+  bottom: -0.6rem; /* Consistent positioning */
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(65, 135, 240, 0.2), transparent);
+}
+
+/* ============================================================
+   IMPROVED CONTROLS VISIBILITY - ONLY FOR USER'S OWN COMMENTS
+   ============================================================ */
+/* Hide delete and edit buttons by default */
+.c-controls .delete,
+.c-controls .edit {
+  display: none !important;
+}
+
+/* Only show delete and edit for the current user's comments */
+.this-user .c-controls .delete,
+.this-user .c-controls .edit {
+  display: flex !important;
+}
+
+/* Show reply button for all comments when logged in */
+.c-controls .reply {
+  display: none !important;
+}
+
+body.logged-in .c-controls .reply {
+  display: flex !important;
+}
+
+/* ============================================================
+   REPLY CONTAINER ALIGNMENT
+   ============================================================ */
+/* Align reply containers to the left */
+.reply-input.container {
+  padding: 1rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  margin-left: 0; /* Ensure no left margin */
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Ensure replies section is properly aligned */
+.replies {
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.3rem;
+  margin-left: 2.5rem;
+  border-left: none; /* Removing the border-left that creates the vertical line */
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start; /* Align items to the left */
+  width: calc(100% - 2.5rem); /* Account for the left margin */
+  max-width: 100%;
+  overflow: hidden; /* Prevent content from overflowing */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Ensure comment wrappers inside replies fit properly */
+.replies .comment-wrp {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-right: 0;
+  padding-right: 0.8rem; /* Slightly reduced right padding */
+}
+
+/* Adjust the grid layout for comments in replies */
+.replies .comment {
+  grid-template-columns: auto minmax(0, 1fr) auto; /* Prevent middle column from expanding too much */
+  width: 100%;
+}
+
+/* Ensure text content doesn't overflow */
+.c-text {
+  grid-area: body;
+  margin: 0;
+  padding-left: 0.2rem;
+  word-wrap: break-word; /* Allow long words to break */
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.c-body {
+  display: block;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  word-break: break-word; /* Allow breaking words to prevent overflow */
+  max-width: 100%;
+}
+
+/* Adjust reply input container to fit within replies */
+.replies .reply-input.container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-right: 0;
+}
+
+/* Ensure controls don't push content outside container */
+.replies .c-controls {
+  flex-wrap: wrap; /* Allow controls to wrap if needed */
+  justify-content: flex-end;
+}
+
+/* Adjust hide replies button positioning */
+.hide-replies-btn {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  margin-left: 2.5rem; /* Match the replies left margin */
+  width: fit-content;
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS FOR NESTED COMMENTS
+   ============================================================ */
+@media (max-width: 768px) {
+  .replies {
+    margin-left: 1.5rem;
+    width: calc(100% - 1.5rem);
+  }
+  
+  .hide-replies-btn {
+    margin-left: 1.5rem;
+  }
+  
+  .replies .c-controls {
+    gap: 0.5rem;
+  }
+  
+  .replies .c-controls a {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .replies {
+    margin-left: 1rem;
+    width: calc(100% - 1rem);
+  }
+  
+  .hide-replies-btn {
+    margin-left: 1rem;
+  }
+}
+
+/* ============================================================
+   REMOVE HOVER EFFECT FROM INTERACTIVE COMMENTS CONTAINER
+   ============================================================ */
+/* Remove hover effect from main container */
+.interactive-comments:hover {
+  background: linear-gradient(145deg, rgba(30, 60, 90, 0.3), rgba(30, 60, 90, 0.35));
+  transform: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure consistent styling for reply inputs */
+.reply-input.container:hover {
+  background: rgba(30, 60, 90, 0.4);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================================
+   FIX REPLY INPUT STYLING
+   ============================================================ */
+/* Ensure consistent styling for all reply inputs */
+.reply-input.container {
+  background: linear-gradient(145deg, rgba(30, 60, 90, 0.3), rgba(30, 60, 90, 0.4));
+  border: 1px solid rgba(65, 135, 240, 0.15);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  width: 100%;
+}
+
+.reply-input.container img {
+  margin-top: 0.3rem;
+}
+
+.reply-input.container textarea.cmnt-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(65, 135, 240, 0.2);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.reply-input.container .bu-primary {
+  align-self: flex-end;
+  margin-bottom: 0.2rem;
+}
+
+/* ============================================================
+   IMPROVED TEXT COLORS FOR BETTER READABILITY
+   ============================================================ */
+/* Comment body text */
+.c-body {
+  display: block;
+  color: #ffffff; /* Change from var(--text-primary) to white */
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Username color */
+.usr-name {
+  font-weight: 600;
+  color: #ffffff; /* Change from var(--accent-blue) to white */
+  font-size: 1.05rem;
+}
+
+/* Timestamp color */
+.cmnt-at {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8); /* Lighter white for secondary text */
+  margin-left: 0.5rem;
+  opacity: 0.8;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+/* Reply-to username */
+.reply-to {
+  color: #ffffff; /* Change from var(--accent-blue) to white */
+  font-weight: 600;
+  margin-right: 0.4rem;
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+/* Score number */
+.score-number {
+  font-weight: bold;
+  color: #ffffff; /* Change from var(--accent-blue) to white */
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+/* Control buttons text */
+.c-controls a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.9); /* Lighter white for better visibility */
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover state for control buttons */
+.c-controls a:hover {
+  color: #ffffff; /* Pure white on hover */
+  transform: translateY(-2px);
+}
+
+/* Keep delete hover red */
+.c-controls .delete:hover {
+  color: #ff5252; /* Brighter red for better contrast */
+}
+
+/* ============================================================
+   ADDITIONAL FIXES FOR POPUP NOTIFICATIONS
+   ============================================================ */
+/* Move popup from .interactive-comments to body level */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--card-bg);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  z-index: 2000;
+  text-align: center;
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Remove the .interactive-comments prefix to make it truly fixed to viewport */
+.popup p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Add a more pronounced animation for the modal */
+@keyframes modalFadeIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+.modal.container {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* ============================================================
+   IMPROVED REPLY ANIMATIONS
+   ============================================================ */
+/* Animation for reply form appearing/disappearing */
+@keyframes slideDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-15px);
+    max-height: 0;
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+    max-height: 300px;
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 1; 
+    transform: translateY(0);
+    max-height: 300px;
+  }
+  to { 
+    opacity: 0; 
+    transform: translateY(-15px);
+    max-height: 0;
+  }
+}
+
+/* Animation for replies section appearing */
+@keyframes fadeInSlide {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+    max-height: 2000px; /* Increased to accommodate more content */
+  }
+}
+
+/* Apply smoother animation to reply input */
+.reply-input.container:not(.main-input) {
+  animation: slideDown 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  transform-origin: top center;
+  overflow: hidden;
+  will-change: transform, opacity, max-height; /* Optimize animation performance */
+}
+
+.reply-input.container.closing {
+  animation: slideUp 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Apply smoother animation to replies section */
+.replies {
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow: hidden;
+  will-change: transform, opacity, max-height; /* Optimize animation performance */
+}
+
+.replies.animating {
+  animation: fadeInSlide 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Improve the hide replies button transition */
+.hide-replies-btn {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  cursor: pointer;
+}
+
+.hide-replies-btn:hover {
+  background: rgba(65, 135, 240, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Enhance reply button hover effect */
+.c-controls .reply {
+  position: relative;
+  overflow: hidden;
+}
+
+.c-controls .reply:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.c-controls .reply:hover:after {
+  width: 100%;
+}
+
+/* Improve pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.reply-pulse {
+  animation: pulse 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Add active state for reply button */
+.reply-active {
+  color: var(--accent-blue) !important;
+  transform: translateY(-2px);
+}
+
+/* Adding common style for all inputs/textareas placeholders */
+textarea::placeholder,
+input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0.8;
+}
+  

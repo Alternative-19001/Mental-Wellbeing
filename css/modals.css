@@ -1,0 +1,178 @@
+/* Modal styling for interactive elements */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 17, 68, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: #00224f;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  position: relative;
+  transform: translateY(30px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-container.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.modal-body {
+  margin-bottom: 2rem;
+}
+
+.floating-icon {
+  position: fixed;
+  bottom: 1rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 51, 136, 0.4);
+  z-index: 1000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 51, 136, 0.6);
+  background: var(--primary-light);
+}
+
+.floating-icon i {
+  font-size: 1.6rem;
+  color: white;
+}
+
+/* Quiz modal specific styles */
+.quiz-modal .quiz-options {
+  margin-bottom: 1.5rem;
+}
+
+.quiz-modal .quiz-option {
+  background: rgba(0, 51, 136, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.quiz-modal .quiz-option:hover {
+  background: rgba(0, 51, 136, 0.2);
+  transform: translateX(5px);
+}
+
+.quiz-modal .quiz-option.selected {
+  background: rgba(0, 51, 136, 0.3);
+  color: var(--text-primary);
+  border-left: 4px solid var(--primary-light);
+}
+
+.quiz-modal .quiz-actions {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.quiz-modal .quiz-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--primary-light);
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 51, 136, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.quiz-modal .quiz-button:hover {
+  background: var(--primary-medium);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0, 51, 136, 0.4);
+}
+
+/* Breathing modal styles removed */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .floating-icon {
+    width: 50px;
+    height: 50px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+  }
+
+  .breathing-modal .breathing-circle {
+    width: 200px;
+    height: 200px;
+  }
+}

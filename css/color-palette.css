@@ -1,0 +1,32 @@
+
+/* Simplified Color Palette with just 3 colors */
+:root {
+  /* Primary colors - blue shades from darkest to lightest */
+  --primary-dark: #000e36;      /* Darkened navy blue */
+  --primary-medium: #002b73;    /* Darkened medium blue */
+  --primary-light: #0066BB;     /* Light blue */
+  
+  /* UI colors - using our three blue shades */
+  --bg-dark: var(--primary-dark);
+  --bg-medium: var(--primary-medium);
+  --card-bg: #00275e;           /* Slightly darker card background */
+  --nav-bg: var(--primary-dark);
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #d0e0ff;
+  --text-muted: #a9b9e0;
+  
+  /* Status colors - reusing our blues where possible */
+  --success: var(--primary-light);
+  --warning: var(--primary-light);
+  --danger: var(--primary-medium);
+  --info: var(--primary-light);
+  
+  /* Gradients - using only our three blues */
+  --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  --gradient-accent: linear-gradient(135deg, var(--primary-medium), var(--primary-light));
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
