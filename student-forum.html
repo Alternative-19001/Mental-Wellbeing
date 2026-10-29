@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Sanctuary - Forum</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/student-forum.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Styles for popup notifications */
+
+    </style>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo-container">
+        <div class="logo-image">
+          <img src="images/logo.png" alt="Logo" class="nav-logo" />
+        </div>
+        <div class="logo">Student Sanctuary</div>
+      </div>
+      <nav class="navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="mental-wellbeing.html" class="nav-link">Mental Well-being</a>
+        <a href="physical-wellbeing.html" class="nav-link">Physical Well-being</a>
+        <a href="study-life-balance.html" class="nav-link">Study-Life Balance</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="student-forum.html" class="nav-link active">Forum</a>
+      </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+      <div class="container" data-aos="fade-up">
+        <!-- Welcome Text -->
+        <div class="welcome">
+          <h2>Welcome to the Student Forum</h2>
+          <p>
+            This is a place for respectful and supportive discussions. 
+            Feel free to ask questions, share experiences, and help each other succeed.
+            Together, we can create a community that uplifts and encourages one another.
+          </p>
+        </div>
+
+        <!-- Forum Rules -->
+        <div class="forum-rules">
+          <h3>Forum Rules</h3>
+          <p>
+            1. Be respectful of others' opinions.<br />
+            2. No bullying, harassment, or hate speech.<br />
+            3. Keep posts on-topic. No spamming.<br />
+            4. Protect your privacy; don't share personal details publicly.
+          </p>
+        </div>
+        <div id="login-container">
+          <div class="login-heading">
+            <h2>What would you like to be addressed as?</h2>
+          </div>
+          <div class="login-input-area">
+            <input
+              type="text"
+              id="login-username"
+              placeholder="Enter your username"
+            />
+            <button id="login-btn">Continue</button>
+            <button id="logout-btn" style="display: none;">Log Out</button>
+          </div>
+        </div>
+        <div class="forum-container">
+          <div class="comments-section">
+            <div class="interactive-comments">
+              <div id="comment-input-section" style="display: none;"></div>
+              
+              <template class="reply-input-template">
+                <div class="reply-input container">
+                  <img src="images/user-image-with-black-background-svgrepo-com.svg" alt="ni" class="usr-img"" />
+                  <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
+                  <button class="bu-primary">SEND</button>
+                </div>
+              </template>
+
+              <template class="comment-template">
+                <div class="comment-wrp">
+                  <div class="comment container">
+                    <div class="c-controls">
+                      <a class="delete"><i class="fa fa-trash"></i>Delete</a>
+                      <a class="edit"><i class="fa fa-edit"></i>Edit</a>
+                      <a class="reply"><i class="fa fa-reply"></i>Reply</a>
+              </div>
+                    <div class="c-user">
+                      <img
+                        src="images/user-image-with-black-background-svgrepo-com.svg"
+                    alt="User Profile"
+                        class="usr-img"
+                        style="background-color: #ffffff; border-radius: 50%; width: 38px; height: 38px;"
+                      />
+                      <p class="usr-name"></p>
+                      <p class="cmnt-at"></p>
+                                    </div>
+                    <p class="c-text">
+                      <span class="reply-to"></span>
+                      <span class="c-body"></span>
+                    </p>
+                  </div>
+                  <button class="hide-replies-btn">Hide Replies</button>
+                  <div class="replies comments-wrp"></div>
+                </div>
+              </template>
+
+              <div class="comment-section">
+                <div class="comments-wrp"></div>
+                <div class="reply-input container main-input">
+                  <img src="images/user-image-with-black-background-svgrepo-com.svg" alt="User Profile" class="usr-img" style="background-color: #ffffff; border-radius: 50%; width: 38px; height: 38px;" />
+                  <textarea class="cmnt-input" placeholder="Add a comment..."></textarea>
+                  <button class="bu-primary" id="send-btn">SEND</button>
+                </div>
+              </div>
+
+              <!-- Delete Modal -->
+              <div class="modal-wrp invisible">
+                <div class="modal container">
+                  <h3>Delete comment</h3>
+                  <p>
+                    Are you sure you want to delete this comment? This will remove the 
+                    comment and can't be undone.
+                  </p>
+                  <button class="yes">YES, DELETE</button>
+                  <button class="no">NO, CANCEL</button>
+                </div>
+              </div>
+            </div> 
+          </div> 
+        </div> 
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-brand">
+          <img
+            src="images/logo.png"
+            alt="Student Well-Being Logo"
+            class="footer-logo"
+          />
+          <p class="footer-disclaimer">
+            This site is presented for information only 
+            and is not intended to substitute for professional medical advice.
+          </p>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="mental-wellbeing.html">Mental Well-being</a>
+            <a href="physical-wellbeing.html">Physical Well-being</a>
+            <a href="study-life-balance.html">Study-Life Balance</a>
+            <a href="resources.html">Resources</a>
+            <a href="student-forum.html">Forum</a>
+          </div>
+        </nav>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Student Well-Being. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Firebase Modular SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, serverTimestamp, query, orderBy, where, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCmbocRSDSdmcPfjiU35IMrc1Fdg7-Gk",
+        authDomain: "student-forum-42654.firebaseapp.com",
+        projectId: "student-forum-42654",
+        storageBucket: "student-forum-42654.firebasestorage.app",
+        messagingSenderId: "361897087877",
+        appId: "1:361897087877:web:10ec38b3260e13770eb68c",
+        measurementId: "G-C0P7X23Y6D"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+      
+      // Make Firebase objects available globally
+      window.db = db;
+      window.firebase = {
+        app,
+        db,
+        analytics,
+        serverTimestamp,
+        collection,
+        addDoc,
+        getDocs,
+        doc,
+        updateDoc,
+        query,
+        orderBy,
+        where,
+        deleteDoc
+      };
+      
+      // Dispatch event when Firebase is loaded
+      document.dispatchEvent(new Event('firebaseLoaded'));
+    </script>
+
+    <!-- Forum Logic Scripts -->
+    <script src="js/forum.js"></script>
+  </body>
+</html>
